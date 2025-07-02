@@ -9,9 +9,9 @@ public partial class PhotoReview
 
     public int PhotoId { get; set; }
 
-    public int? ReviewerId { get; set; }
+    public string? ReviewerId { get; set; }
 
-    public DateTime? ReviewedAt { get; set; }
+    public DateTime? ReviewedAt { get; set; } = DateTime.UtcNow;
 
     public string? Comment { get; set; }
 

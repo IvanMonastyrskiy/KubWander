@@ -7,11 +7,11 @@ public partial class Photo
 {
     public int Id { get; set; }
 
-    public int UserId { get; set; }
+    public string UserId { get; set; } = null!; 
 
     public int QuestId { get; set; }
 
-    public DateTime? UploadedAt { get; set; }
+    public DateTime? UploadedAt { get; set; } = DateTime.UtcNow;
 
     public string ImageUrl { get; set; } = null!;
 

@@ -132,3 +132,10 @@ D:\KubWander\KubWander\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.MSB
 D:\KubWander\KubWander\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 D:\KubWander\KubWander\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 D:\KubWander\KubWander\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+D:\KubWander\KubWander\obj\Debug\net8.0\KubWander.sourcelink.json
+D:\KubWander\KubWander\bin\Debug\net8.0\KubWander.staticwebassets.runtime.json
+D:\KubWander\KubWander\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\KubWander\KubWander\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\KubWander\KubWander\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\KubWander\KubWander\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+D:\KubWander\KubWander\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll

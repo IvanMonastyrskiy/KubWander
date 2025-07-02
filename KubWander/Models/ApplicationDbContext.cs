@@ -1,54 +1,59 @@
 ﻿using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace KubWander.Models;
 
-public partial class ApplicationDbContext : DbContext
+public partial class ApplicationDbContext : IdentityDbContext<User>
 {
-    public ApplicationDbContext()
-    {
-    }
-
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
         : base(options)
     {
     }
 
     public virtual DbSet<Achievement> Achievements { get; set; }
-
     public virtual DbSet<City> Cities { get; set; }
-
     public virtual DbSet<Comment> Comments { get; set; }
-
     public virtual DbSet<District> Districts { get; set; }
-
     public virtual DbSet<Photo> Photos { get; set; }
-
     public virtual DbSet<PhotoReview> PhotoReviews { get; set; }
-
     public virtual DbSet<Place> Places { get; set; }
-
     public virtual DbSet<Quest> Quests { get; set; }
-
     public virtual DbSet<User> Users { get; set; }
-
     public virtual DbSet<UserAchievement> UserAchievements { get; set; }
-
     public virtual DbSet<UserQuest> UserQuests { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseNpgsql("Host=localhost;Database=KubWanderData;Username=postgres;Password=20Ivan062005");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.ToTable("users");
+            entity.HasIndex(e => e.Email, "users_email_key").IsUnique();
+            entity.Property(e => e.Name)
+                .HasMaxLength(100)
+                .HasColumnName("name");
+            entity.Property(e => e.Points)
+                .HasDefaultValue(0)
+                .HasColumnName("points");
+            entity.Property(e => e.AvatarUrl).HasColumnName("avatar_url");
+            entity.Property(e => e.Role)
+                .HasMaxLength(20)
+                .HasDefaultValue("user")
+                .HasColumnName("role");
+            entity.Property(e => e.RegisteredAt)
+                .HasDefaultValueSql("CURRENT_TIMESTAMP")
+                .HasColumnType("timestamp without time zone")
+                .HasColumnName("registered_at");
+        });
+
         modelBuilder.Entity<Achievement>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("achievements_pkey");
-
             entity.ToTable("achievements");
-
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Description).HasColumnName("description");
             entity.Property(e => e.IconUrl).HasColumnName("icon_url");
@@ -60,9 +65,7 @@ public partial class ApplicationDbContext : DbContext
         modelBuilder.Entity<City>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("cities_pkey");
-
             entity.ToTable("cities");
-
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.DistrictId).HasColumnName("district_id");
             entity.Property(e => e.Name)
@@ -77,9 +80,7 @@ public partial class ApplicationDbContext : DbContext
         modelBuilder.Entity<Comment>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("comments_pkey");
-
             entity.ToTable("comments");
-
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
@@ -88,7 +89,9 @@ public partial class ApplicationDbContext : DbContext
             entity.Property(e => e.PhotoId).HasColumnName("photo_id");
             entity.Property(e => e.QuestId).HasColumnName("quest_id");
             entity.Property(e => e.Text).HasColumnName("text");
-            entity.Property(e => e.UserId).HasColumnName("user_id");
+            entity.Property(e => e.UserId)
+                .HasColumnType("text")
+                .HasColumnName("user_id");
 
             entity.HasOne(d => d.Photo).WithMany(p => p.Comments)
                 .HasForeignKey(d => d.PhotoId)
@@ -108,9 +111,7 @@ public partial class ApplicationDbContext : DbContext
         modelBuilder.Entity<District>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("districts_pkey");
-
             entity.ToTable("districts");
-
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Description).HasColumnName("description");
             entity.Property(e => e.Name)
@@ -121,9 +122,7 @@ public partial class ApplicationDbContext : DbContext
         modelBuilder.Entity<Photo>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("photos_pkey");
-
             entity.ToTable("photos");
-
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Description).HasColumnName("description");
             entity.Property(e => e.ImageUrl).HasColumnName("image_url");
@@ -136,7 +135,9 @@ public partial class ApplicationDbContext : DbContext
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp without time zone")
                 .HasColumnName("uploaded_at");
-            entity.Property(e => e.UserId).HasColumnName("user_id");
+            entity.Property(e => e.UserId)
+                .HasColumnType("text")
+                .HasColumnName("user_id");
 
             entity.HasOne(d => d.Quest).WithMany(p => p.Photos)
                 .HasForeignKey(d => d.QuestId)
@@ -150,9 +151,7 @@ public partial class ApplicationDbContext : DbContext
         modelBuilder.Entity<PhotoReview>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("photo_reviews_pkey");
-
             entity.ToTable("photo_reviews");
-
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Comment).HasColumnName("comment");
             entity.Property(e => e.Decision)
@@ -163,7 +162,9 @@ public partial class ApplicationDbContext : DbContext
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp without time zone")
                 .HasColumnName("reviewed_at");
-            entity.Property(e => e.ReviewerId).HasColumnName("reviewer_id");
+            entity.Property(e => e.ReviewerId)
+                .HasColumnType("text")
+                .HasColumnName("reviewer_id");
 
             entity.HasOne(d => d.Photo).WithMany(p => p.PhotoReviews)
                 .HasForeignKey(d => d.PhotoId)
@@ -178,9 +179,7 @@ public partial class ApplicationDbContext : DbContext
         modelBuilder.Entity<Place>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("places_pkey");
-
             entity.ToTable("places");
-
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Address).HasColumnName("address");
             entity.Property(e => e.CityId).HasColumnName("city_id");
@@ -201,9 +200,7 @@ public partial class ApplicationDbContext : DbContext
         modelBuilder.Entity<Quest>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("quests_pkey");
-
             entity.ToTable("quests");
-
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.CityId).HasColumnName("city_id");
             entity.Property(e => e.Description).HasColumnName("description");
@@ -236,43 +233,13 @@ public partial class ApplicationDbContext : DbContext
                 .HasConstraintName("quests_place_id_fkey");
         });
 
-        modelBuilder.Entity<User>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("users_pkey");
-
-            entity.ToTable("users");
-
-            entity.HasIndex(e => e.Email, "users_email_key").IsUnique();
-
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.AvatarUrl).HasColumnName("avatar_url");
-            entity.Property(e => e.Email)
-                .HasMaxLength(150)
-                .HasColumnName("email");
-            entity.Property(e => e.Name)
-                .HasMaxLength(100)
-                .HasColumnName("name");
-            entity.Property(e => e.PasswordHash).HasColumnName("password_hash");
-            entity.Property(e => e.Points)
-                .HasDefaultValue(0)
-                .HasColumnName("points");
-            entity.Property(e => e.RegisteredAt)
-                .HasDefaultValueSql("CURRENT_TIMESTAMP")
-                .HasColumnType("timestamp without time zone")
-                .HasColumnName("registered_at");
-            entity.Property(e => e.Role)
-                .HasMaxLength(20)
-                .HasDefaultValueSql("'user'::character varying")
-                .HasColumnName("role");
-        });
-
         modelBuilder.Entity<UserAchievement>(entity =>
         {
             entity.HasKey(e => new { e.UserId, e.AchievementId }).HasName("user_achievements_pkey");
-
             entity.ToTable("user_achievements");
-
-            entity.Property(e => e.UserId).HasColumnName("user_id");
+            entity.Property(e => e.UserId)
+                .HasColumnType("text")
+                .HasColumnName("user_id");
             entity.Property(e => e.AchievementId).HasColumnName("achievement_id");
             entity.Property(e => e.ReceivedAt)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
@@ -291,14 +258,10 @@ public partial class ApplicationDbContext : DbContext
         modelBuilder.Entity<UserQuest>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("user_quests_pkey");
-
             entity.ToTable("user_quests");
-
             entity.HasIndex(e => new { e.UserId, e.QuestId }, "unique_user_quest").IsUnique();
-
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.CompletedAt)
-                .HasDefaultValueSql("CURRENT_TIMESTAMP")
                 .HasColumnType("timestamp without time zone")
                 .HasColumnName("completed_at");
             entity.Property(e => e.PhotoId).HasColumnName("photo_id");
@@ -307,7 +270,9 @@ public partial class ApplicationDbContext : DbContext
                 .HasMaxLength(20)
                 .HasDefaultValueSql("'pending'::character varying")
                 .HasColumnName("status");
-            entity.Property(e => e.UserId).HasColumnName("user_id");
+            entity.Property(e => e.UserId)
+                .HasColumnType("text")
+                .HasColumnName("user_id");
 
             entity.HasOne(d => d.Photo).WithMany(p => p.UserQuests)
                 .HasForeignKey(d => d.PhotoId)
