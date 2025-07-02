@@ -1,0 +1,6 @@
+@KubWander_HostAddress = http://localhost:5299
+
+GET {{KubWander_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
