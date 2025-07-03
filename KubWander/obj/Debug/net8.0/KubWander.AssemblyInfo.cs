@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-//[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("526cdbe3-5da1-44a6-87df-66e13f4595d0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("KubWander")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5a5c2161a53acdb7ac7ef7fdd62eed4b77b673d9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4339c0b749b397aa87a22250fc5809b33645aa05")]
 [assembly: System.Reflection.AssemblyProductAttribute("KubWander")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KubWander")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

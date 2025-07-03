@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "al1DUKsQjGj+dOQN/IgBpi/4mjLrRgoBOQIf9n3iA/S6fnzvz7DBCf/jo9Z5jmWu31m9SbxtsIUKiyDMKVAg6w==",
+  "dgSpecHash": "5ELRzeCzWMF6aZIonRvZZexbuqSOm+1T4f246pMymLvYMXsF1MNjOtnW5hw09K9Sl9LiDQS4PQH7zzDstLOlng==",
   "success": true,
   "projectFilePath": "D:\\KubWander\\KubWander\\KubWander.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\monas\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\monas\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\monas\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.17\\microsoft.aspnetcore.cryptography.internal.8.0.17.nupkg.sha512",
     "C:\\Users\\monas\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.17\\microsoft.aspnetcore.cryptography.keyderivation.8.0.17.nupkg.sha512",
