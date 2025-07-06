@@ -139,3 +139,4 @@ D:\KubWander\KubWander\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDer
 D:\KubWander\KubWander\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 D:\KubWander\KubWander\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
 D:\KubWander\KubWander\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+D:\KubWander\KubWander\bin\Debug\net8.0\BCrypt.Net-Next.dll

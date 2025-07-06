@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+using KubWander.Models;
+using Microsoft.AspNetCore.Identity;
+using BCrypt;
 
 namespace KubWander.Controllers
 {
@@ -8,6 +9,15 @@ namespace KubWander.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
+        private readonly SignInManager<User> _signInManager;
+        private readonly UserManager<User> _userManager;
+
+        public LoginController(SignInManager<User> signInManager, UserManager<User> userManager)
+        {
+            _signInManager = signInManager;
+            _userManager = userManager;
+        }
+
         // GET: api/<LoginController>
         [HttpGet]
         public IEnumerable<string> Get()
@@ -24,8 +34,22 @@ namespace KubWander.Controllers
 
         // POST api/<LoginController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<IActionResult> Login([FromBody] LoginModel loginModel)
         {
+            if(!ModelState.IsValid) return BadRequest(ModelState);
+
+            var user = await _userManager.FindByEmailAsync(loginModel.Email);
+            if(user == null) return Unauthorized(new {Error = "Пользователь не найден"});
+
+            var loginResult = await _signInManager.PasswordSignInAsync(
+                loginModel.Email,
+                loginModel.Password,
+                lockoutOnFailure: false,
+                isPersistent: true
+                );
+
+            if(loginResult.Succeeded) { return Ok("Вход выполнен"); }
+            return Unauthorized(new {Error = "Неверный email или пароль"});
         }
 
         // PUT api/<LoginController>/5

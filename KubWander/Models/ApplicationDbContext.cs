@@ -32,22 +32,58 @@ public partial class ApplicationDbContext : IdentityDbContext<User>
         modelBuilder.Entity<User>(entity =>
         {
             entity.ToTable("users");
+            entity.HasIndex(u => u.NormalizedUserName).HasDatabaseName("UserNameIndex").IsUnique();
+            entity.HasIndex(u => u.NormalizedEmail).HasDatabaseName("EmailIndex");
             entity.HasIndex(e => e.Email, "users_email_key").IsUnique();
+
+            entity.Property(u => u.NormalizedUserName)
+                .HasMaxLength(256)
+                .HasColumnName("normalized_user_name");
+
+            entity.Property(u => u.NormalizedEmail)
+                .HasMaxLength(256)
+                .HasColumnName("normalized_email");
+
+            entity.Property(u => u.SecurityStamp)
+                .HasMaxLength(36)
+                .IsRequired()
+                .HasColumnName("security_stamp");
+
+            entity.Property(u => u.ConcurrencyStamp)
+                .HasColumnName("concurrency_stamp");
+
             entity.Property(e => e.Name)
                 .HasMaxLength(100)
                 .HasColumnName("name");
+
             entity.Property(e => e.Points)
                 .HasDefaultValue(0)
                 .HasColumnName("points");
+
             entity.Property(e => e.AvatarUrl).HasColumnName("avatar_url");
+
             entity.Property(e => e.Role)
                 .HasMaxLength(20)
                 .HasDefaultValue("user")
                 .HasColumnName("role");
+
             entity.Property(e => e.RegisteredAt)
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
-                .HasColumnType("timestamp without time zone")
+                .HasColumnType("timestamp with time zone")
                 .HasColumnName("registered_at");
+
+            entity.Property(u => u.UserName)
+                .HasMaxLength(256)
+                .HasColumnName("username");
+
+            entity.Ignore(u => u.AccessFailedCount);
+            entity.Ignore(u => u.LockoutEnd);
+            entity.Ignore(u => u.TwoFactorEnabled);
+            entity.Ignore(u => u.EmailConfirmed);
+            entity.Ignore(u => u.LockoutEnabled);
+            entity.Ignore(u => u.PhoneNumber);
+            entity.Ignore(u => u.PhoneNumberConfirmed);
+            
         });
 
         modelBuilder.Entity<Achievement>(entity =>
