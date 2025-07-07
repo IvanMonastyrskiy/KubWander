@@ -3,6 +3,7 @@ using System;
 using KubWander.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace KubWander.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250707071700_doublecoordadd")]
+    partial class doublecoordadd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -67,14 +70,6 @@ namespace KubWander.Migrations
                     b.Property<int>("DistrictId")
                         .HasColumnType("integer")
                         .HasColumnName("district_id");
-
-                    b.Property<double?>("Latitude")
-                        .HasColumnType("double precision")
-                        .HasColumnName("latitude");
-
-                    b.Property<double?>("Longitude")
-                        .HasColumnType("double precision")
-                        .HasColumnName("longitude");
 
                     b.Property<double?>("MaxLatitude")
                         .HasColumnType("double precision")
@@ -163,14 +158,6 @@ namespace KubWander.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("text")
                         .HasColumnName("description");
-
-                    b.Property<double?>("Latitude")
-                        .HasColumnType("double precision")
-                        .HasColumnName("latitude");
-
-                    b.Property<double?>("Longitude")
-                        .HasColumnType("double precision")
-                        .HasColumnName("longitude");
 
                     b.Property<double?>("MaxLatitude")
                         .HasColumnType("double precision")
@@ -314,9 +301,6 @@ namespace KubWander.Migrations
                         .HasColumnType("text")
                         .HasColumnName("description");
 
-                    b.Property<int?>("DistrictId")
-                        .HasColumnType("integer");
-
                     b.Property<double?>("Latitude")
                         .HasColumnType("double precision")
                         .HasColumnName("latitude");
@@ -340,8 +324,6 @@ namespace KubWander.Migrations
                         .HasName("places_pkey");
 
                     b.HasIndex("CityId");
-
-                    b.HasIndex("DistrictId");
 
                     b.ToTable("places", (string)null);
                 });
@@ -779,13 +761,7 @@ namespace KubWander.Migrations
                         .OnDelete(DeleteBehavior.SetNull)
                         .HasConstraintName("places_city_id_fkey");
 
-                    b.HasOne("KubWander.Models.District", "District")
-                        .WithMany("Places")
-                        .HasForeignKey("DistrictId");
-
                     b.Navigation("City");
-
-                    b.Navigation("District");
                 });
 
             modelBuilder.Entity("KubWander.Models.Quest", b =>
@@ -931,8 +907,6 @@ namespace KubWander.Migrations
             modelBuilder.Entity("KubWander.Models.District", b =>
                 {
                     b.Navigation("Cities");
-
-                    b.Navigation("Places");
 
                     b.Navigation("Quests");
                 });

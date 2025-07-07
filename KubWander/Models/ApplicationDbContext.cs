@@ -104,6 +104,13 @@ public partial class ApplicationDbContext : IdentityDbContext<User>
             entity.ToTable("cities");
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.DistrictId).HasColumnName("district_id");
+            entity.Property(e => e.Latitude).HasColumnName("latitude");
+            entity.Property(e => e.Longitude).HasColumnName("longitude");
+            entity.Property(e => e.MinLatitude).HasColumnName("min_latitude");
+            entity.Property(e => e.MinLongitude).HasColumnName("min_longitude");
+            entity.Property(e => e.MaxLatitude).HasColumnName("max_latitude");
+            entity.Property(e => e.MaxLongitude).HasColumnName("max_longitude");
+            
             entity.Property(e => e.Name)
                 .HasMaxLength(100)
                 .HasColumnName("name");
@@ -150,6 +157,12 @@ public partial class ApplicationDbContext : IdentityDbContext<User>
             entity.ToTable("districts");
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Description).HasColumnName("description");
+            entity.Property(e => e.Latitude).HasColumnName("latitude");
+            entity.Property(e => e.Longitude).HasColumnName("longitude");
+            entity.Property(e => e.MinLatitude).HasColumnName("min_latitude");
+            entity.Property(e => e.MinLongitude).HasColumnName("min_longitude");
+            entity.Property(e => e.MaxLatitude).HasColumnName("max_latitude");
+            entity.Property(e => e.MaxLongitude).HasColumnName("max_longitude");
             entity.Property(e => e.Name)
                 .HasMaxLength(100)
                 .HasColumnName("name");
@@ -220,6 +233,9 @@ public partial class ApplicationDbContext : IdentityDbContext<User>
             entity.Property(e => e.Address).HasColumnName("address");
             entity.Property(e => e.CityId).HasColumnName("city_id");
             entity.Property(e => e.Description).HasColumnName("description");
+            entity.Property(e => e.Latitude).HasColumnName("latitude");
+            entity.Property(e => e.Longitude).HasColumnName("longitude");
+            entity.Property(e => e.DistrictId).HasColumnName("districtId");
             entity.Property(e => e.Name)
                 .HasMaxLength(150)
                 .HasColumnName("name");
@@ -231,6 +247,11 @@ public partial class ApplicationDbContext : IdentityDbContext<User>
                 .HasForeignKey(d => d.CityId)
                 .OnDelete(DeleteBehavior.SetNull)
                 .HasConstraintName("places_city_id_fkey");
+
+            entity.HasOne(d => d.District).WithMany(p => p.Places)
+                .HasForeignKey(d => d.DistrictId)
+                .OnDelete(DeleteBehavior.SetNull)
+                .HasConstraintName("places_district_id_fkey");
         });
 
         modelBuilder.Entity<Quest>(entity =>
