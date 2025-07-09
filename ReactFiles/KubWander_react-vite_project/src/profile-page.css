@@ -1,0 +1,20 @@
+body{
+    background-color: #efefef;
+    height: 100%;
+}
+
+
+
+.menu-container{
+    width: 480px;
+    min-height: max-content;
+    color:black;
+    border-color: black;
+    display: flex;
+    margin-top: 0px;
+    
+}
+
+
+
+

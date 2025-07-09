@@ -1,0 +1,30 @@
+.stats-section{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+
+}
+
+.stats-grid {
+  
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.stat-card {
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.stat-value {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.stat-label {
+  color: #7f8c8d;
+  font-size: 0.9em;
+}
