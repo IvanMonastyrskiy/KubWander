@@ -1,0 +1,80 @@
+.map-container {
+    position: fixed;
+    top: 110px;
+    width: 750px;
+    height: 700px;
+}
+
+.map {
+    position: relative;
+    width: 100%;
+    max-width: 990px;
+    margin: 20px 0;
+}
+
+.map-svg {
+    width: 100%;
+    height: auto;
+}
+
+.map img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#map-tooltip {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    pointer-events: none;
+    z-index: 100;
+}
+
+/* Добавленные стили для карты */
+.map {
+    position: relative;
+    text-align: center;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/* Стили для серых областей */
+path:not([data-id="region-20"]):not([data-id="region-39"]):not([data-id="region-41"]) {
+    opacity: 0.4;
+    fill: gray;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Стили для зеленых областей */
+path[data-id="region-20"],
+path[data-id="region-39"],
+path[data-id="region-41"] {
+    opacity: 0.4;
+    fill: green;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Общее правило для наведения - должно быть достаточно специфичным */
+path:not([data-id="region-20"]):not([data-id="region-39"]):not([data-id="region-41"]):hover,
+path[data-id="region-20"]:hover,
+path[data-id="region-39"]:hover,
+path[data-id="region-41"]:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+#map-tooltip {
+    color: black !important;
+    background: white !important;
+}
