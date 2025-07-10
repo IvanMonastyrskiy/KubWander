@@ -288,3 +288,6 @@ C:\Users\nikos\KubWander\KubWander\obj\Debug\net8.0\refint\KubWander.dll
 C:\Users\nikos\KubWander\KubWander\obj\Debug\net8.0\KubWander.pdb
 C:\Users\nikos\KubWander\KubWander\obj\Debug\net8.0\KubWander.genruntimeconfig.cache
 C:\Users\nikos\KubWander\KubWander\obj\Debug\net8.0\ref\KubWander.dll
+D:\KubWander\KubWander\bin\Debug\net8.0\ClientApp\package-lock.json
+D:\KubWander\KubWander\bin\Debug\net8.0\ClientApp\package.json
+D:\KubWander\KubWander\bin\Debug\net8.0\Microsoft.AspNetCore.SpaServices.Extensions.dll

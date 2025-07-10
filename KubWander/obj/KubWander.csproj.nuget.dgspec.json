@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\nikos\\KubWander\\KubWander\\KubWander.csproj": {}
+    "D:\\KubWander\\KubWander\\KubWander.csproj": {}
   },
   "projects": {
-    "C:\\Users\\nikos\\KubWander\\KubWander\\KubWander.csproj": {
+    "D:\\KubWander\\KubWander\\KubWander.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\nikos\\KubWander\\KubWander\\KubWander.csproj",
+        "projectUniqueName": "D:\\KubWander\\KubWander\\KubWander.csproj",
         "projectName": "KubWander",
-        "projectPath": "C:\\Users\\nikos\\KubWander\\KubWander\\KubWander.csproj",
-        "packagesPath": "C:\\Users\\nikos\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\nikos\\KubWander\\KubWander\\obj\\",
+        "projectPath": "D:\\KubWander\\KubWander\\KubWander.csproj",
+        "packagesPath": "C:\\Users\\monas\\.nuget\\packages\\",
+        "outputPath": "D:\\KubWander\\KubWander\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\nikos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\monas\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -38,13 +38,7 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        },
-        "SdkAnalysisLevel": "9.0.300"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -114,7 +108,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

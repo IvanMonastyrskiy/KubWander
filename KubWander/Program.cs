@@ -5,20 +5,17 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Конфигурация сервисов
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Настройка статических файлов для SPA
 builder.Services.AddSpaStaticFiles(configuration =>
 {
     configuration.RootPath = "ClientApp/dist";
 });
 
-// Настройка Identity
 builder.Services.AddIdentity<User, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>()
     .AddDefaultTokenProviders();
@@ -34,8 +31,7 @@ builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
-// Конвейер middleware
-app.UseStaticFiles(); // Важно: должно быть перед UseSpaStaticFiles
+app.UseStaticFiles();
 app.UseSpaStaticFiles();
 
 if (app.Environment.IsDevelopment())
@@ -45,15 +41,13 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseRouting(); // Добавлено явное использование маршрутизации
+app.UseRouting(); 
 app.UseAuthentication();
 app.UseAuthorization();
 
-// Обработка API запросов
 app.MapControllers();
 app.MapRazorPages();
 
-// Обработка SPA запросов
 app.MapWhen(ctx => !ctx.Request.Path.StartsWithSegments("/api") &&
                   !ctx.Request.Path.StartsWithSegments("/swagger") &&
                   !ctx.Request.Path.StartsWithSegments("/identity"),
@@ -70,7 +64,6 @@ app.MapWhen(ctx => !ctx.Request.Path.StartsWithSegments("/api") &&
         });
     });
 
-// Fallback для SPA
-app.MapFallbackToFile("index.html"); // Добавлено для обработки favicon.ico и других файлов
+app.MapFallbackToFile("index.html");
 
 app.Run();

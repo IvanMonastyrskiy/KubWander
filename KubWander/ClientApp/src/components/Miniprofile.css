@@ -1,0 +1,97 @@
+.mini-profile-container {
+    top: 20px;
+    background-color: white;
+    border-radius: 30px;
+    margin-left: 20px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: black;
+    max-width: 120vw;
+    width: 420px;
+    min-width: 280px;
+    height: 463px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    gap: 8px;
+
+}
+
+.avatar {
+    background-color: transparent;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+
+.change_avatar_button {
+    position: absolute;
+    top: 200px; 
+    left: calc(50% + 70px);
+    transform: translateX(-50%);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+    .change_avatar_button:focus,
+    .change_avatar_button:active {
+        outline: none;
+        box-shadow: none;
+    }
+
+.change_avatar_img {
+    height: 18px;
+    width: 18px;
+}
+
+.nickname {
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.description {
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.profile-info-line {
+    width: 80%;
+    height: 2px;
+    background-color: #ccc;
+    border-radius: 2px;
+    margin: 15px 0;
+}
+
+.confirm_button {
+    margin-top: 10px;
+    background: linear-gradient(135deg, #bde2f5, #7bc884);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+}
+    .confirm_button:focus,
+    .confirm_button:active {
+        outline: none;
+        box-shadow: none;
+    }
+
