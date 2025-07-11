@@ -1,5 +1,3 @@
-
-
 export const menuItems = [
   { page: "Вернуться на главную", path: '/', image: './public/gotohome.png'},
     { page: "Профиль", path: '/Profile', image: './public/gotohome.png' },

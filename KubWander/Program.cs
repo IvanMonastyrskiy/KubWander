@@ -29,11 +29,25 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 builder.Services.AddAuthorization();
 builder.Services.AddRazorPages();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
+
 var app = builder.Build();
 
 app.UseStaticFiles();
 app.UseSpaStaticFiles();
-
+app.Use(async (context, next) =>
+{
+    context.Response.Headers.Append("Content-Type", "text/html; charset=utf-8");
+    await next();
+});
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -63,7 +77,7 @@ app.MapWhen(ctx => !ctx.Request.Path.StartsWithSegments("/api") &&
             }
         });
     });
-
+app.UseCors("AllowAll");
 app.MapFallbackToFile("index.html");
 
 app.Run();

@@ -5,6 +5,7 @@ using System.Security.Claims;
 using KubWander.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -35,7 +36,15 @@ namespace KubWander.Controllers
             var count_quests_user = _context.UserQuests.Count(u => u.UserId == id && u.Status == "Выполнено");
             var count_photos_user = _context.Photos.Count(p => p.UserId == id);
             if (user == null) return Unauthorized();
-            return Ok(new { User = user.Name, user.Email, user.Points, count_quests_user, count_photos_user });
+            //return Ok(new { User = user.Name, user.Email, user.Points, count_quests_user, count_photos_user });
+            return Content(JsonConvert.SerializeObject(new
+            {
+                User = user.Name,
+                user.Email,
+                user.Points,
+                count_quests_user,
+                count_photos_user
+            }), "application/json; charset=utf-8");
         }
         [HttpPost]
         public async Task<IActionResult> Logout()
