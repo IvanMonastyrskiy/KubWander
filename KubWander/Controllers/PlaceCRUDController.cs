@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace KubWander.Controllers
 {
@@ -27,7 +26,15 @@ namespace KubWander.Controllers
         {
             return await _context.Places.ToListAsync();
         }
-
+        [HttpGet("districts")]
+        [Produces("application/json")]
+        public async Task<ActionResult<IEnumerable<object>>> GetAllDistricts()
+        {
+            var districts = await _context.Districts
+                .Select(d => new { d.Id, d.Latitude, d.Longitude })
+                .ToListAsync();
+            return Ok(districts);
+        }
         // GET api/<PlaceCRUDController>/5
         [HttpGet("{id}")]
         public string Get(int id)
@@ -37,9 +44,15 @@ namespace KubWander.Controllers
 
         // POST api/<PlaceCRUDController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        [Produces("application/json")]
+        public ActionResult Post(int id)
         {
-            //Создание места
+            var district = _context.Districts.FirstOrDefault(d => d.Id == id);
+            if (district == null)
+            {
+                return NotFound(new { Message = "Район с указанным ID не найден" });
+            }
+            return Ok(new { Latitude = district.Latitude, Longitude = district.Longitude });
         }
         [HttpGet("near")]
         public async Task<ActionResult<IEnumerable<Place>>> GetNearPlace(double latitude, double longitude)
