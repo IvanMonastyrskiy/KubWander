@@ -1,6 +1,6 @@
 import './Miniprofile.css'
-export default function Miniprofile(){
-    return(
+export default function Miniprofile() {
+    return (
         <div className="mini-profile-container">
             <img className="avatar" src='./public/avatar.png' />
             <button className="change_avatar_button">

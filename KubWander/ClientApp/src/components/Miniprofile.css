@@ -1,5 +1,6 @@
 .mini-profile-container {
-    top: 20px;
+    bottom: 50.5rem;
+    left: 23rem;
     background-color: white;
     border-radius: 30px;
     margin-left: 20px;
@@ -7,9 +8,9 @@
     font-weight: 500;
     color: black;
     max-width: 120vw;
-    width: 420px;
+    width: 590px;
     min-width: 280px;
-    height: 463px;
+    height: 28rem;
     padding: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     z-index: 1000;
@@ -18,7 +19,6 @@
     align-items: center;
     position: relative;
     gap: 8px;
-
 }
 
 .avatar {
@@ -31,7 +31,7 @@
 
 .change_avatar_button {
     position: absolute;
-    top: 200px; 
+    top: 200px;
     left: calc(50% + 70px);
     transform: translateX(-50%);
     border-radius: 50%;
@@ -45,6 +45,7 @@
     align-items: center;
     justify-content: center;
 }
+
     .change_avatar_button:focus,
     .change_avatar_button:active {
         outline: none;
@@ -89,9 +90,9 @@
     cursor: pointer;
     font-weight: 500;
 }
+
     .confirm_button:focus,
     .confirm_button:active {
         outline: none;
         box-shadow: none;
     }
-

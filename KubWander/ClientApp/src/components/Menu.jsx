@@ -1,6 +1,6 @@
 import { menuItems } from '../data';
 import { Link, useLocation } from 'react-router-dom';
-import ActiveTaks from "../components/ActiveTasks"
+import ActiveQuest from "../components/ActiveQuest"
 import './Menu.css';
 
 export default function Menu() {
@@ -16,8 +16,8 @@ export default function Menu() {
                     </Link>
                 </div>
             ))}
-            <ActiveTaks />
-            
+            <ActiveQuest />
+
         </div>
     );
 }

@@ -1,0 +1,33 @@
+.active-quest-text {
+    width: 320px;
+    height: 67px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient();
+    color: black;
+    background: linear-gradient(45deg, #7BC884, #BDE2F5);
+    border-radius: 30px;
+}
+
+.quest-container {
+    color: #ffffff;
+}
+
+.active-quest {
+    width: 320px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #7BC884;
+    margin-top: 20px;
+    border-radius: 30px;
+    gap: 10px;
+}
+
+.active-quest-img {
+    width: 29px;
+    height: 29px;
+    padding-left: 30px;
+}

@@ -5,6 +5,7 @@ export const menuItems = [
     { page: "Избранное", path: '', image: './public/gotohome.png' },
     { page: "Магазин", path: '', image: './public/gotohome.png' },
 ];
+
 export const stats = [
     { label: "Сделано фото", image: './public/gallery_stat.png', value: "1" },
     { label: "KubCoins", image: './public/coins_stat.png', value: "1" },
@@ -20,3 +21,10 @@ export const mapConfig = {
     SVG_Width: 901,
     SVG_Height: 844
 };
+
+export const activeQuests = [
+    { img: './public/avatar.png', label: "я не спою" },
+    { img: './public/avatar.png', label: "я не спою" },
+    { img: './public/avatar.png', label: "я не спою" },
+    { img: './public/avatar.png', label: "я не спою" }
+]
