@@ -5,26 +5,26 @@ export default function LastAchivments() {
     return (
         <div className="last-achivment-container">
             <div className="last-achivment">
-                <h2 className="achievement-title">Последние достижения</h2>
+                <h2 className="achievement-title">РџРѕСЃР»РµРґРЅРёРµ РґРѕСЃС‚РёР¶РµРЅРёСЏ</h2>
                 <div className="columns-wrapper">
                     <div className="column left-column">
                         <div className="item">
-                            <h3>Классника</h3>
-                            <p>Посетить стадион Краснодар</p>
+                            <h3>РљР»Р°СЃСЃРЅРёРєР°</h3>
+                            <p>РџРѕСЃРµС‚РёС‚СЊ СЃС‚Р°РґРёРѕРЅ РљСЂР°СЃРЅРѕРґР°СЂ</p>
                         </div>
                         <div className="item">
-                            <h3>Кубанский борщ</h3>
-                            <p>Посетить ресторан *** и попробовать национальное блюдо</p>
+                            <h3>РљСѓР±Р°РЅСЃРєРёР№ Р±РѕСЂС‰</h3>
+                            <p>РџРѕСЃРµС‚РёС‚СЊ СЂРµСЃС‚РѕСЂР°РЅ *** Рё РїРѕРїСЂРѕР±РѕРІР°С‚СЊ РЅР°С†РёРѕРЅР°Р»СЊРЅРѕРµ Р±Р»СЋРґРѕ</p>
                         </div>
                     </div>
                     <div className="column right-column">
                         <div className="item">
-                            <h3>Классника</h3>
+                            <h3>РљР»Р°СЃСЃРЅРёРєР°</h3>
                             <p>01.03.2023</p>
                         </div>
                         <div className="item">
-                            <h3>Кубанский борщ</h3>
-                            <p>Посетить ресторан *** и попробовать национальное блюдо</p>
+                            <h3>РљСѓР±Р°РЅСЃРєРёР№ Р±РѕСЂС‰</h3>
+                            <p>РџРѕСЃРµС‚РёС‚СЊ СЂРµСЃС‚РѕСЂР°РЅ *** Рё РїРѕРїСЂРѕР±РѕРІР°С‚СЊ РЅР°С†РёРѕРЅР°Р»СЊРЅРѕРµ Р±Р»СЋРґРѕ</p>
                         </div>
                     </div>
                 </div>

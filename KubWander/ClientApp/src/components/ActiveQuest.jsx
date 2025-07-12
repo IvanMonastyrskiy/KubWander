@@ -6,7 +6,7 @@ export default function ActiveQuest() {
     return (
         <div className="active-quest-container">
             <div className="active-quest-text">
-                <p>Активные задания</p>
+                <p>РђРєС‚РёРІРЅС‹Рµ Р·Р°РґР°РЅРёСЏ</p>
             </div>
             <div className="quest-container">
 

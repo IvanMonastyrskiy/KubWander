@@ -1,0 +1,10 @@
+﻿.content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.map {
+    flex: 1;
+    padding: 20px;
+}

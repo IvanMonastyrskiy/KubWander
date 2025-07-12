@@ -61,7 +61,6 @@
     margin-bottom: 10px;
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
     .stats-section {
         width: 35vw;
