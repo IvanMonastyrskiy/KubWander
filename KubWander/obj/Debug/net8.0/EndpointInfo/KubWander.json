@@ -353,6 +353,26 @@
         }
       }
     },
+    "/api/PlaceCRUD/districts": {
+      "get": {
+        "tags": [
+          "PlaceCRUD"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": { }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/PlaceCRUD/{id}": {
       "get": {
         "tags": [
@@ -459,25 +479,16 @@
         "tags": [
           "PlaceCRUD"
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "string"
-              }
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
             }
           }
-        },
+        ],
         "responses": {
           "200": {
             "description": "Success"
@@ -541,7 +552,7 @@
         }
       }
     },
-    "/api/Profile": {
+    "/api/Profile/users": {
       "get": {
         "tags": [
           "Profile"
@@ -551,7 +562,9 @@
             "description": "Success"
           }
         }
-      },
+      }
+    },
+    "/api/Profile": {
       "post": {
         "tags": [
           "Profile"
@@ -987,7 +1000,8 @@
           },
           "minLongitude": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "nullable": true
           },
           "maxLatitude": {
             "type": "number",
@@ -996,7 +1010,8 @@
           },
           "maxLongitude": {
             "type": "number",
-            "format": "double"
+            "format": "double",
+            "nullable": true
           },
           "cities": {
             "type": "array",

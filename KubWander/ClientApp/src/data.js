@@ -7,11 +7,12 @@ export const menuItems = [
 ];
 
 export const stats = [
-    { label: "Сделано фото", image: './public/gallery_stat.png', value: "1" },
-    { label: "KubCoins", image: './public/coins_stat.png', value: "1" },
-    { label: "Квестов выполнено", image: './public/quest_stat.png', value: "1" },
-    { label: "Звание", image: './public/adventurer_stat.png', value: "1" }
+    { key: "photos", label: "Сделано фото", image: './public/gallery_stat.png' },
+    { key: "points", label: "KubCoins", image: './public/coins_stat.png' },
+    { key: "quests", label: "Квестов выполнено", image: './public/quest_stat.png' },
+    { key: "rank", label: "Звание", image: './public/adventurer_stat.png' }
 ];
+
 
 export const mapConfig = {
     MinLatitude: 43.01,

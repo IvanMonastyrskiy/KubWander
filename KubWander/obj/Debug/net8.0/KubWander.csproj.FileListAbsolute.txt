@@ -18,13 +18,7 @@ D:\KubWander\KubWander\obj\Debug\net8.0\KubWander.MvcApplicationPartsAssemblyInf
 D:\KubWander\KubWander\obj\Debug\net8.0\KubWander.MvcApplicationPartsAssemblyInfo.cache
 D:\KubWander\KubWander\obj\Debug\net8.0\staticwebassets.build.json
 D:\KubWander\KubWander\obj\Debug\net8.0\staticwebassets.development.json
-D:\KubWander\KubWander\obj\Debug\net8.0\staticwebassets\msbuild.KubWander.Microsoft.AspNetCore.StaticWebAssets.props
-D:\KubWander\KubWander\obj\Debug\net8.0\staticwebassets\msbuild.build.KubWander.props
-D:\KubWander\KubWander\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.KubWander.props
-D:\KubWander\KubWander\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.KubWander.props
-D:\KubWander\KubWander\obj\Debug\net8.0\staticwebassets.pack.json
 D:\KubWander\KubWander\obj\Debug\net8.0\scopedcss\bundle\KubWander.styles.css
-D:\KubWander\KubWander\obj\Debug\net8.0\KubWander.csproj.CopyComplete
 D:\KubWander\KubWander\obj\Debug\net8.0\KubWander.dll
 D:\KubWander\KubWander\obj\Debug\net8.0\refint\KubWander.dll
 D:\KubWander\KubWander\obj\Debug\net8.0\KubWander.pdb
@@ -292,3 +286,12 @@ D:\KubWander\KubWander\bin\Debug\net8.0\ClientApp\package-lock.json
 D:\KubWander\KubWander\bin\Debug\net8.0\ClientApp\package.json
 D:\KubWander\KubWander\bin\Debug\net8.0\Microsoft.AspNetCore.SpaServices.Extensions.dll
 D:\KubWander\KubWander\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\KubWander\KubWander\bin\Debug\net8.0\KubWander.staticwebassets.endpoints.json
+D:\KubWander\KubWander\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\KubWander\KubWander\obj\Debug\net8.0\rjimswa.dswa.cache.json
+D:\KubWander\KubWander\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+D:\KubWander\KubWander\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+D:\KubWander\KubWander\obj\Debug\net8.0\staticwebassets.build.json.cache
+D:\KubWander\KubWander\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+D:\KubWander\KubWander\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+D:\KubWander\KubWander\obj\Debug\net8.0\KubWander.csproj.Up2Date

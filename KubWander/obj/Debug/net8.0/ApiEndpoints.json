@@ -247,18 +247,12 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "value",
-        "Type": "System.String",
-        "IsRequired": true
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": false
       }
     ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
+    "ReturnTypes": []
   },
   {
     "ContainingType": "KubWander.Controllers.PlaceCRUDController",
@@ -275,6 +269,24 @@
           "text/plain",
           "application/json",
           "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "KubWander.Controllers.PlaceCRUDController",
+    "Method": "GetAllDistricts",
+    "RelativePath": "api/PlaceCRUD/districts",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.Object, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "application/json"
         ],
         "StatusCode": 200
       }
@@ -388,9 +400,9 @@
   },
   {
     "ContainingType": "KubWander.Controllers.ProfileController",
-    "Method": "User_profile",
+    "Method": "Logout",
     "RelativePath": "api/Profile",
-    "HttpMethod": "GET",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [],
@@ -398,9 +410,9 @@
   },
   {
     "ContainingType": "KubWander.Controllers.ProfileController",
-    "Method": "Logout",
-    "RelativePath": "api/Profile",
-    "HttpMethod": "POST",
+    "Method": "User_profile",
+    "RelativePath": "api/Profile/users",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [],

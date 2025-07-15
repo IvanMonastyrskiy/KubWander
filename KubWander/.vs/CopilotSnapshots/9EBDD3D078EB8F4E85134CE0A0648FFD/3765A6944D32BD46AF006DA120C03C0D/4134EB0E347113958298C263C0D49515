@@ -1,0 +1,58 @@
+﻿import { useEffect } from 'react';
+import './Miniprofile.css'
+import axios from 'axios';
+
+export default function Miniprofile() {
+    const fetchUserData = async () => {
+        try {
+            const getData = await axios.get('/api/Profile/users', {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                }
+            });
+            const users = getData.data;
+            console.log(users);
+            if (users && Array.isArray(users)) {
+                setPoints(users.map(users => ({
+                    nickname: users.Name,
+                    description: users.Email,
+                    avatar: users.AvatarUrl
+                })));
+                setError(null);
+            } else {
+                setError('Данные не получены');
+            }
+        } catch (error) {
+            setError('Ошибка при получении данных: ' + error.message);
+            console.error('Ошибка при получении данных:', error);
+        }
+        
+    };
+    useEffect(() => {
+        fetchUserData();
+    }, []);
+    return (
+        <div className="mini-profile-container">
+            <img className="avatar" src='./public/avatar.png' />
+            <button className="change_avatar_button">
+                <img className="change_avatar_img" src="./public/change-ava.png" alt="Сменить аватар" />
+            </button>
+            {
+                return(
+            const {x, y, z} = fetchUserData(nickname, description, avatar);
+            <div className="nickname">{x}</div>
+            <div className="description">{y}</div>
+            <img className="avatar" src={z} alt="Avatar" />
+
+                )}
+            {/*<div className="nickname">Nickname</div>*/}
+            {/*<div className="description">Description</div>*/}
+
+            <div className="profile-info-line"></div>
+            <div className="profile-info-line"></div>
+
+            <button className="confirm_button">Сохранить</button>
+        </div>
+    )
+}

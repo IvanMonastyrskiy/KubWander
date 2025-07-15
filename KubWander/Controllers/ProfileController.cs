@@ -25,7 +25,8 @@ namespace KubWander.Controllers
             _logger = logger;
             _context = context;
         }
-        [HttpGet]
+        [HttpGet("users")]
+        [Produces("application/json")]
         public async Task<IActionResult> User_profile()
         {
             var id = _userManager.GetUserId(User);
@@ -40,6 +41,7 @@ namespace KubWander.Controllers
                 User = user.Name,
                 user.Email,
                 user.Points,
+                user.AvatarUrl,
                 count_quests_user,
                 count_photos_user
             }), "application/json; charset=utf-8");
