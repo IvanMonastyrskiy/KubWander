@@ -16,7 +16,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KubWander")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c79d7cd0848bf43b6b54d2f5af594d9e44ed5bf4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e4dd2f6c4726322743b4febf94bc504e0c934b70")]
 [assembly: System.Reflection.AssemblyProductAttribute("KubWander")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KubWander")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

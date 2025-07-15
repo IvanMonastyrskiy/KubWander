@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\KubWander\\KubWander\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{036451F3-AFEE-4588-8575-60ED2B76BCEF}|KubWander.csproj|d:\\kubwander\\kubwander\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{036451F3-AFEE-4588-8575-60ED2B76BCEF}|KubWander.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\KubWander\\KubWander\\obj\\Debug\\net8.0\\KubWander.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:obj\\Debug\\net8.0\\KubWander.AssemblyInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{036451F3-AFEE-4588-8575-60ED2B76BCEF}|KubWander.csproj|d:\\kubwander\\kubwander\\models\\quest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{036451F3-AFEE-4588-8575-60ED2B76BCEF}|KubWander.csproj|solutionrelative:models\\quest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{036451F3-AFEE-4588-8575-60ED2B76BCEF}|KubWander.csproj|d:\\kubwander\\kubwander\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{036451F3-AFEE-4588-8575-60ED2B76BCEF}|KubWander.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{036451F3-AFEE-4588-8575-60ED2B76BCEF}|KubWander.csproj|d:\\kubwander\\kubwander\\clientapp\\src\\components\\map.jsx||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -57,10 +61,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{036451F3-AFEE-4588-8575-60ED2B76BCEF}|KubWander.csproj|d:\\kubwander\\kubwander\\models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{036451F3-AFEE-4588-8575-60ED2B76BCEF}|KubWander.csproj|solutionrelative:models\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{036451F3-AFEE-4588-8575-60ED2B76BCEF}|KubWander.csproj|d:\\kubwander\\kubwander\\models\\quest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{036451F3-AFEE-4588-8575-60ED2B76BCEF}|KubWander.csproj|solutionrelative:models\\quest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{036451F3-AFEE-4588-8575-60ED2B76BCEF}|KubWander.csproj|d:\\kubwander\\kubwander\\models\\userquest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -118,23 +118,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 26,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "KubWander.AssemblyInfo.cs",
               "DocumentMoniker": "D:\\KubWander\\KubWander\\obj\\Debug\\net8.0\\KubWander.AssemblyInfo.cs",
               "RelativeDocumentMoniker": "obj\\Debug\\net8.0\\KubWander.AssemblyInfo.cs",
-              "ToolTip": "D:\\KubWander\\KubWander\\obj\\Debug\\net8.0\\KubWander.AssemblyInfo.cs",
-              "RelativeToolTip": "obj\\Debug\\net8.0\\KubWander.AssemblyInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAtwA0AAAACAAAAAAAAAA==",
+              "ToolTip": "D:\\KubWander\\KubWander\\obj\\Debug\\net8.0\\KubWander.AssemblyInfo.cs*",
+              "RelativeToolTip": "obj\\Debug\\net8.0\\KubWander.AssemblyInfo.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAtwBEAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-15T08:57:21.113Z"
+              "WhenOpened": "2025-07-15T08:57:21.113Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "data.js",
               "DocumentMoniker": "D:\\KubWander\\KubWander\\ClientApp\\src\\data.js",
               "RelativeDocumentMoniker": "ClientApp\\src\\data.js",
@@ -146,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Stats.jsx",
               "DocumentMoniker": "D:\\KubWander\\KubWander\\ClientApp\\src\\components\\Stats.jsx",
               "RelativeDocumentMoniker": "ClientApp\\src\\components\\Stats.jsx",
@@ -158,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Map.jsx",
               "DocumentMoniker": "D:\\KubWander\\KubWander\\ClientApp\\src\\components\\Map.jsx",
               "RelativeDocumentMoniker": "ClientApp\\src\\components\\Map.jsx",
@@ -170,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Miniprofile.jsx",
               "DocumentMoniker": "D:\\KubWander\\KubWander\\ClientApp\\src\\components\\Miniprofile.jsx",
               "RelativeDocumentMoniker": "ClientApp\\src\\components\\Miniprofile.jsx",
@@ -182,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "profileData.js",
               "DocumentMoniker": "D:\\KubWander\\KubWander\\ClientApp\\src\\components\\profileData.js",
               "RelativeDocumentMoniker": "ClientApp\\src\\components\\profileData.js",
@@ -194,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ProfileController.cs",
               "DocumentMoniker": "D:\\KubWander\\KubWander\\Controllers\\ProfileController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProfileController.cs",
@@ -206,7 +207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Profile.jsx",
               "DocumentMoniker": "D:\\KubWander\\KubWander\\ClientApp\\src\\pages\\Profile.jsx",
               "RelativeDocumentMoniker": "ClientApp\\src\\pages\\Profile.jsx",
@@ -218,7 +219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "GalleryController.cs",
               "DocumentMoniker": "D:\\KubWander\\KubWander\\Controllers\\GalleryController.cs",
               "RelativeDocumentMoniker": "Controllers\\GalleryController.cs",
@@ -230,7 +231,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Place.cs",
               "DocumentMoniker": "D:\\KubWander\\KubWander\\Models\\Place.cs",
               "RelativeDocumentMoniker": "Models\\Place.cs",
@@ -242,7 +243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "PlaceCRUDController.cs",
               "DocumentMoniker": "D:\\KubWander\\KubWander\\Controllers\\PlaceCRUDController.cs",
               "RelativeDocumentMoniker": "Controllers\\PlaceCRUDController.cs",
@@ -338,7 +339,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 1,
               "Title": "Quest.cs",
               "DocumentMoniker": "D:\\KubWander\\KubWander\\Models\\Quest.cs",
               "RelativeDocumentMoniker": "Models\\Quest.cs",
@@ -346,7 +347,8 @@
               "RelativeToolTip": "Models\\Quest.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAAswCUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-09T12:54:25.326Z"
+              "WhenOpened": "2025-07-09T12:54:25.326Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -410,7 +412,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\KubWander\\KubWander\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -422,7 +424,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "D:\\KubWander\\KubWander\\Models\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Models\\ApplicationDbContext.cs",
@@ -434,13 +436,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\KubWander\\KubWander\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\KubWander\\KubWander\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABwAAAAAAAAAA==",
+              "ToolTip": "D:\\KubWander\\KubWander\\appsettings.json*",
+              "RelativeToolTip": "appsettings.json*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-07-09T12:54:25.336Z",
               "EditorCaption": ""
