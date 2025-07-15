@@ -78,7 +78,17 @@ path[data-id="44"]:hover {
     transition: 0.3s;
 }
 
-#map-tooltip {
-    color: black !important;
-    background: white !important;
+.map-tooltip {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    pointer-events: none;
+
+    transition: opacity 0.2s ease;
+    z-index: 1000;
+    max-width: 200px;
+    text-align: center;
 }
