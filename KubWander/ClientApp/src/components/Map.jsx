@@ -2,12 +2,14 @@ import './Map.css';
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { mapConfig } from '../data';
+import { Navigate, useNavigate } from 'react-router-dom';
+import Region from '../pages/Region';
 
 export default function Map() {
     const [points, setPoints] = useState([]);
     const [error, setError] = useState(null);
     const [tooltip, setTooltip] = useState({ visible: false, content: '', x: 0, y: 0 });
-
+    const navigate = useNavigate();
     const handleMouseMove = (e) => {
          if (tooltip.visible) {
             setTooltip(prev => ({
@@ -30,31 +32,30 @@ export default function Map() {
 
         return { x, y };
     };
-    const handleRegionClick = (e, regionId) => {
-        if (['40', '42', '44'].includes(regionId)) {
+    
+    const handleRegionClick = (e) => {
+        const id = e.target.getAttribute('data-id');
+        if (['40', '42', '44'].includes(id)) {
             e.target.style.filter = 'drop-shadow(0 0 25px rgba(46, 204, 113, 1)) brightness(1.5)';
             setTimeout(() => {
                 e.target.style.filter = 'drop-shadow(0 0 15px rgba(46, 204, 113, 0.9)) brightness(1.3)';
             }, 500);
         }
-
-        setTimeout(() => {
-            window.location.href = `/region/${regionId}/`;
-        }, 100);
+       
+        navigate(`/regionMap?regionId=${id}`);
+       
     };
 
     const initMap = () => {
                 document.querySelectorAll('.map-svg path').forEach(region => {
                     region.addEventListener('click', handleRegionClick);
-    
-                    // Плавное появление для спец. регионов
+
                     if (['40', '42', '44'].includes(region.getAttribute('data-id'))) {
                         region.style.transition = 'all 0.5s ease';
                         region.style.opacity = '0';
                         setTimeout(() => region.style.opacity = '1', 100);
                     }
-    
-                    // Подсказки
+
                    region.addEventListener('mouseenter', (e) => {
                         setTooltip({
                             visible: true,
@@ -76,7 +77,7 @@ export default function Map() {
                     'Content-Type': 'application/json'
                 }
             });
-            console.log('Ответ от API:', response.data);
+            //console.log('Ответ от API:', response.data);
             const districts = response.data;
             if (districts && Array.isArray(districts)) {
                 setPoints(districts.map(district => ({
