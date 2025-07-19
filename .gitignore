@@ -1,1 +1,19 @@
+# .gitignore
+## Visual Studio временные файлы
+.vs/
+bin/
 obj/
+*.suo
+*.user
+*.vsidx
+*.bin
+*.db
+*.mpack
+*.cache
+*.pdb
+*.dll
+*.exe
+
+## Скомпилированные файлы
+Debug/
+Release/
