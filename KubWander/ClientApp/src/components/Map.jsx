@@ -8,16 +8,29 @@ import Region from '../pages/Region';
 export default function Map() {
     const [points, setPoints] = useState([]);
     const [error, setError] = useState(null);
+<<<<<<< HEAD
     const [tooltip, setTooltip] = useState({ visible: false, content: '', x: 0, y: 0 });
     const navigate = useNavigate();
+=======
+    const [tooltip, setTooltip] = useState({ visible: false, content: '', x: 0, y: 0, regionCenter: {x:0, y:0} });
+
+>>>>>>> ad4238c9d3ec816ef11e2361cf4dc1d348537809
     const handleMouseMove = (e) => {
          if (tooltip.visible) {
             setTooltip(prev => ({
                 ...prev,
                 x: e.clientX + 15,  
-                y: e.clientY + 15
+                y: e.clientY -40
             }));
         }
+    };
+
+    const getPathCenter = (pathElement) => {
+        const bbox = pathElement.getBBox();
+        return {
+            x: bbox.x + bbox.width / 2,
+            y: bbox.y + bbox.height / 2
+        };
     };
 
     const latLngToSvg = (lat, lng) => {
@@ -49,21 +62,39 @@ export default function Map() {
     const initMap = () => {
                 document.querySelectorAll('.map-svg path').forEach(region => {
                     region.addEventListener('click', handleRegionClick);
+<<<<<<< HEAD
 
+=======
+>>>>>>> ad4238c9d3ec816ef11e2361cf4dc1d348537809
                     if (['40', '42', '44'].includes(region.getAttribute('data-id'))) {
                         region.style.transition = 'all 0.5s ease';
                         region.style.opacity = '0';
                         setTimeout(() => region.style.opacity = '1', 100);
                     }
+<<<<<<< HEAD
 
                    region.addEventListener('mouseenter', (e) => {
+=======
+                    region.addEventListener('mouseenter', (e) => {
+                        const center = getPathCenter(region);
+>>>>>>> ad4238c9d3ec816ef11e2361cf4dc1d348537809
                         setTooltip({
                             visible: true,
                             content: region.getAttribute('data-name'),
-                        
+                            x: e.clientX + 15,
+                            y: e.clientY - 40,
+                            regionCenter: center 
                         });
                     });
-    
+
+                    region.addEventListener('mousemove', (e) => {
+                        setTooltip(prev => ({
+                            ...prev,
+                            x: e.clientX + 15,
+                            y: e.clientY - 40
+                        }));
+                    });
+
                    region.addEventListener('mouseleave', () => {
                         setTooltip(prev => ({ ...prev, visible: false }));
                     });
@@ -1869,20 +1900,33 @@ export default function Map() {
                                 cx={x}
                                 cy={y}
                                 r={5}
-                                fill="red"
-                                stroke="black"
+                                fill="white"
+                                stroke="white"
                                 strokeWidth="2"
-                            />
+
+                                />
+                                
+
                         );
                     })}
                 </svg>
                 {tooltip.visible && (
                     <div
                         className="map-tooltip"
-                        id="map-tooltip"
                         style={{
-                            position: 'absolute',
-                           
+                            position: 'fixed',
+                            left: `${tooltip.x}px`,
+                            top: `${tooltip.y}px`,
+                            transform: 'translate(-50%, -100%)',
+                            pointerEvents: 'none',
+                            zIndex: 1000,
+                            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                            color: 'white',
+                            padding: '5px 10px',
+                            borderRadius: '4px',
+                            fontSize: '14px',
+                            whiteSpace: 'nowrap',
+                            boxShadow: '0 2px 5px rgba(0, 0, 0, 0.2)'
                         }}
                     >
                         {tooltip.content}
